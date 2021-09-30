@@ -52,10 +52,11 @@ function Login({ navigation }) {
         <Button
           title="Login"
           onPress={() => {
+          var  user = data.find(x => x.email == email)
             if (
-              email == data.find(x => x.email === email).email
+              email == user.email
               &&
-              password == data.find(x => x.id === password).id
+              password == user.id
             ) {
               // alert("login sucess");
               navigation.navigate("Homescreen");
